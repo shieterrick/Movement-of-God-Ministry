@@ -5,25 +5,64 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact | Movement of God Ministry</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Simple fallback styles in case style.css is missing */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 0; line-height: 1.5; color: #111; }
+    header, footer { background:#f8f8f8; padding: 1rem; }
+    nav a { margin-right: 1rem; color: #0366d6; text-decoration: none; }
+    .container { max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    form { display: grid; gap: 0.75rem; }
+    label { display:block; font-weight:600; }
+    input[type="text"], input[type="email"], textarea { width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px; }
+    button { background:#0366d6; color:#fff; border:none; padding:0.6rem 1rem; border-radius:4px; cursor:pointer; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="ministries.html">Ministries</a>
-      <a href="events.html">Events</a>
-    </nav>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="ministries.html">Ministries</a>
+        <a href="events.html">Events</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="content">
-    <p>Email: <a href="mailto:info@movementofgodministry.org">info@movementofgodministry.org</a></p>
-    <p>Phone: <a href="tel:+10000000000">(000) 000-0000</a></p>
+  <main class="container">
+    <section class="content">
+      <p>Email: <a href="mailto:contact@movementofgodministry.org">contact@movementofgodministry.org</a></p>
+      <p>Phone: <a href="tel:+15551234567">+1-555-123-4567</a></p>
+    </section>
+
+    <section aria-labelledby="contact-form-heading">
+      <h2 id="contact-form-heading">Send us a message</h2>
+      <!-- Replace the action below with your Formspree endpoint or server endpoint -->
+      <form action="https://formspree.io/f/yourformid" method="POST" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <!-- Honeypot field to deter spam (leave hidden) -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit">Send message</button>
+      </form>
+      <p style="font-size:0.9rem;color:#555;margin-top:0.5rem">We respect your privacy — do not include sensitive personal information in this form.</p>
+    </section>
   </main>
 
   <footer>
-    <p>© Movement of God Ministry</p>
+    <div class="container">
+      <p>© Movement of God Ministry</p>
+    </div>
   </footer>
 </body>
 </html>
